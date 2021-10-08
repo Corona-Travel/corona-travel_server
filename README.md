@@ -12,6 +12,16 @@ Development
     git flow feature publish
     ```
 
+Container
+---------
+To crate and run a container use following snippet:
+```sh
+docker build -f src/docker/Containerfile -t cts:latest .
+docker rm -f cts
+docker run -dt --name cts -p 4000:4000 cts:latest
+docker logs -f cts
+```
+
 Usefull links
 -------------
 - [FastApi](https://fastapi.tiangolo.com/)
