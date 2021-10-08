@@ -14,3 +14,6 @@ def black():
 
 def dev():
     call(["uvicorn", "corona_travel_server.app:app", "--reload", "--reload-dir", scr_path, "--port", "4000"])
+
+def run():
+    call(["uvicorn", "--port", "4000", "--host", "0.0.0.0", "corona_travel_server.app:app"])
