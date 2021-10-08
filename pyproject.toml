@@ -15,6 +15,7 @@ authors = [
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.70.0"
+uvicorn = {extras = ["standard"], version = "^0.15.0"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -24,3 +25,4 @@ black = "^21.9b0"
 [tool.poetry.scripts]
 cts-mypy = "corona_travel_server.poetry_scripts:mypy"
 cts-black = "corona_travel_server.poetry_scripts:black"
+cts-dev = "corona_travel_server.poetry_scripts:dev"
