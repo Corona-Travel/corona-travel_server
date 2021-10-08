@@ -11,3 +11,14 @@ Development
     git flow feature finish
     git flow feature publish
     ```
+
+Usefull links
+-------------
+- [FastApi](https://fastapi.tiangolo.com/)
+- [uvicorn](https://www.uvicorn.org/)
+
+TODO
+----
+- linters
+- docker
+- ci/cd
