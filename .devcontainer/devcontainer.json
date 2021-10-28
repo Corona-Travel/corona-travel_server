@@ -36,6 +36,7 @@
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"magicstack.magicpython",
+		"editorconfig.editorconfig"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
