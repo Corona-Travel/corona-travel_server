@@ -4,5 +4,4 @@
     "python.linting.enabled": true,
     "python.linting.mypyEnabled": true,
     "python.formatting.provider": "black",
-    "python.pythonPath": "/home/unrndm/.pyenv/versions/3.9.7/envs/corona-travel/bin/python",
 }
