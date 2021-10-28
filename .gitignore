@@ -1,6 +1,10 @@
+# devcontainer
+.venv/
+
 # cache
 **/__pycache__/
 .mypy_cache/
 
 # local
 .python-version
+c
