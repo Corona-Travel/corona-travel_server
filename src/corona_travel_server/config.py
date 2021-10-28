@@ -5,12 +5,12 @@ read more at https://fastapi.tiangolo.com/advanced/settings/
 
 from functools import lru_cache
 
-from pydantic import BaseSettings
-
+from pydantic import BaseSettings, AnyUrl
 
 class Settings(BaseSettings):
     app_name: str = "Corona Travel App"
-    mongo_link: str
+    # maybe add a custom validator to check that it's a mongo link?
+    mongo_link: AnyUrl
 
     class Config:
         env_file = ".env"
