@@ -7,6 +7,4 @@ app = FastAPI()
 
 @app.get("/test")
 async def test():
-    return {
-        "version": __version__
-    }
+    return {"version": __version__}

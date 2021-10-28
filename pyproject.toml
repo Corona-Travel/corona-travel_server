@@ -15,7 +15,8 @@ authors = [
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.70.0"
-uvicorn = {extras = ["standard"], version = "^0.15.0"}
+# uvicorn = {extras = ["standard"], version = "^0.15.0"} # add back when wheels are available on windows
+uvicorn = "^0.15.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
