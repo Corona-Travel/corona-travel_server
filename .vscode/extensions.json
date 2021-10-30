@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "magicstack.magicpython"
+        "magicstack.magicpython",
+        "editorconfig.editorconfig"
     ]
 }
