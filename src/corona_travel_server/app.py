@@ -29,7 +29,10 @@ async def test(settings: Settings = Depends(get_settings)):
 @app.get("/markers", response_model=Markers)
 async def get_markers(settings: Settings = Depends(get_settings)):
     db = get_db(settings.mongo_url)
-    marker_collection = db.markers
+    marker_collection = db.place
     markers = marker_collection.find({})
     # check that this works
-    return [Marker(*m) for m in markers]
+    res = []
+    for m in markers:
+        res.append(Marker(**m))
+    return res

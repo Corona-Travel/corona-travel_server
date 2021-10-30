@@ -230,11 +230,7 @@ email = ["email-validator (>=1.0.3)"]
 name = "pymongo"
 version = "3.12.1"
 description = "Python driver for MongoDB <http://www.mongodb.org>"
-<<<<<<< HEAD
 category = "dev"
-=======
-category = "main"
->>>>>>> 05096c9c09e360a3e7715d81a2de7b1a404bd352
 optional = false
 python-versions = "*"
 
@@ -362,11 +358,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-<<<<<<< HEAD
 content-hash = "2b6c8514477c6c085a0f6441075f3599c2e4aa1643bb9c6f2754ebdbedc367b7"
-=======
-content-hash = "8fc38cbe1871252f057037e352b3f2c8fa63b84818c218394d8d489cd4187835"
->>>>>>> 05096c9c09e360a3e7715d81a2de7b1a404bd352
 
 [metadata.files]
 anyio = [
