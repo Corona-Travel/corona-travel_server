@@ -7,10 +7,11 @@ from functools import lru_cache
 
 from pydantic import BaseSettings, AnyUrl
 
+
 class Settings(BaseSettings):
     app_name: str = "Corona Travel App"
     # maybe add a custom validator to check that it's a mongo link?
-    mongo_link: AnyUrl
+    mongo_url: AnyUrl = "mongodb://localhost:27017/"
 
     class Config:
         env_file = ".env"

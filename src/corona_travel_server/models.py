@@ -13,4 +13,5 @@ class Marker(BaseModel):
     place_id: str
     marker_id: str
 
+
 Markers = List[Marker]
