@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 
 from corona_travel_server import __version__
 from corona_travel_server.config import Settings, get_settings
@@ -29,10 +29,18 @@ async def test(settings: Settings = Depends(get_settings)):
 @app.get("/markers", response_model=Markers)
 async def get_markers(settings: Settings = Depends(get_settings)):
     db = get_db(settings.mongo_url)
+    if 'place' not in db.list_collection_names():
+        print('Collection not found')
+        raise HTTPException(
+            status_code=500,
+            detail="Collection not found",
+        )
     marker_collection = db.place
     markers = marker_collection.find({})
-    # check that this works
     res = []
     for m in markers:
-        res.append(Marker(**m))
+        try:
+            res.append(Marker(**m))
+        except Exception as e:
+            print(str(e))
     return res
