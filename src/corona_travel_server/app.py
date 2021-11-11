@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
+from reusable_mongodb_connection import get_db
 
 from corona_travel_server import __version__
 from corona_travel_server.config import Settings, get_settings
 from corona_travel_server.models import Marker, Markers
-from corona_travel_server.db_connect import get_db
 
 
 app = FastAPI(
