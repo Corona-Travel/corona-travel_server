@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, status
 from reusable_mongodb_connection import get_db
 
 from corona_travel_server import __version__
@@ -28,15 +28,26 @@ async def test(settings: Settings = Depends(get_settings)):
 
 @app.get("/markers", response_model=Markers)
 async def get_markers(settings: Settings = Depends(get_settings)):
-    db = get_db(settings.mongo_url)
+    try:
+        db = get_db(settings.mongo_url)
+    except Exception as e:
+        print("Connection to DB was unsuccesfull")
+        print(f"Exception: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail="Connection to DB was unsuccesfull"
+        )
+    
     if 'place' not in db.list_collection_names():
         print('Collection not found')
         raise HTTPException(
             status_code=500,
             detail="Collection not found",
         )
+    
     marker_collection = db.place
     markers = marker_collection.find({})
+
     res = []
     for m in markers:
         try:
